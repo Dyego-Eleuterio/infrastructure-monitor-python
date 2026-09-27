@@ -2,15 +2,13 @@
 
 Projeto prático desenvolvido em Python para monitoramento de máquinas Linux através de conexão SSH.
 
-A proposta é desenvolver, de forma incremental, um pequeno monitor de infraestrutura capaz de coletar informações de servidores e exibir seus dados localmente.
+A aplicação estabelece uma conexão SSH com um servidor Linux e coleta informações básicas do sistema, exibindo os resultados localmente no terminal.
 
-## 🚧 Status
+## Status
 
-**Em desenvolvimento — versão inicial.**
+Versão inicial concluída.
 
-Atualmente, o projeto realiza uma conexão SSH com uma máquina Linux e trata falhas de autenticação.
-
-## 🛠️ Tecnologias
+## Tecnologias
 
 * Python
 * Paramiko
@@ -18,22 +16,20 @@ Atualmente, o projeto realiza uma conexão SSH com uma máquina Linux e trata fa
 * Linux
 * Git/GitHub
 
-## 📌 Funcionalidades atuais
+## Funcionalidades
 
 * Conexão SSH com servidor Linux
-* Autenticação utilizando usuário e senha
+* Entrada do IP do servidor pelo usuário
+* Entrada do usuário SSH pelo usuário
+* Solicitação segura da senha sem exibição no terminal
 * Tratamento de erro para senha incorreta
+* Coleta do hostname do servidor
+* Coleta do uptime do servidor
+* Coleta de informações de memória RAM
+* Coleta de informações de armazenamento em disco
+* Identificação da quantidade de CPUs disponíveis
 
-## 🔜 Próximos passos
-
-* Executar comandos remotamente
-* Coletar informações do sistema
-* Monitorar CPU, memória e armazenamento
-* Verificar disponibilidade da máquina
-* Registrar informações do monitoramento
-* Evoluir o projeto para uma ferramenta de monitoramento de infraestrutura
-
-## ▶️ Como executar
+## Como executar
 
 Instale a dependência:
 
@@ -47,8 +43,25 @@ Execute o projeto:
 python main.py
 ```
 
-Informe os dados de acesso da máquina Linux quando solicitado.
+Informe o IP, usuário SSH e senha do servidor quando solicitado.
 
-## 🎯 Objetivo
+## Exemplo de uso
 
-Projeto desenvolvido como prática de Python aplicado a cenários de infraestrutura, automação e administração de sistemas.
+```text
+Digite o IP do servidor: 192.168.0.11
+Digite o usuário SSH: vboxuser
+Digite a senha do servidor:
+
+Conexão SSH realizada com sucesso!
+Hostname do servidor: VMLinux
+Uptime do servidor: 20:11:39 up 12 min, 2 users, load average: 0.06, 0.37, 0.45
+Memória RAM:
+...
+Disco:
+...
+CPUs: 2
+```
+
+## Objetivo
+
+Projeto desenvolvido como prática de Python aplicado a cenários de infraestrutura, automação e administração de sistemas, utilizando uma máquina Linux em ambiente de laboratório para simular o monitoramento de um servidor remoto.
