@@ -37,6 +37,9 @@ try:
     print(f"CPUs: {resultado}")
           
 except paramiko.AuthenticationException:
-    print("Senha incorreta!")
+    print("Credenciais incorretas!")
+
+print("Encerrando conexão SSH...")
+print("Conexão SSH encerrada!")
 
 ssh.close()
